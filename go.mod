@@ -1,3 +1,3 @@
-module github.com/xykong/gosmc
+module github.com/panotza/gosmc
 
 go 1.14
