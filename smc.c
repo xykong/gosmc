@@ -63,6 +63,11 @@ void _ultostr(char *str, UInt32 val)
              (unsigned int) val);
 }
 
+#if !defined(MAC_OS_VERSION_12_0) \
+    || (MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_VERSION_12_0)
+#define IOMainPort IOMasterPort
+#endif
+
 kern_return_t SMCOpen(const char *serviceName, io_connect_t *conn)
 {
     kern_return_t result;
